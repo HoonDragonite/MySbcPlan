@@ -49,20 +49,36 @@ table {
 
 /* 공통 CSS */
 
+.big-font{
+	font-size: 1.1em;
+}
+.mid-font{
+	font-size:1.0em;
+}
+.mid-font-bold{
+	font-size:1.0em;
+	font-weight: bold;
+}
+.small-font{
+	font-size: 0.9em;
+}
+
 .container{
-	width: 100%;
-	height: 100%;
+	width: 100vw;
+	height: 100vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	justify-content:center;
+	align-items: center;
+	background-color: #f8f9fa;
 }
 
 .header{
-	position: fixed;
 	width: 100%;
 	height: 70px;
-	top: 0;
-	left: 0;
+	position: fixed;
+	left:0;
+	top:0;
 	display: flex;
 	flex-flow: row nowrap;
 	justify-content: center;
@@ -78,33 +94,35 @@ table {
 
 .header .header_title{
 	display: block;
-	font-size: 1.0em;
+	font-weight: bold;
 }
 
 .header .header_subtitle{
-	font-size: 0.9em;
+	color: black;
 }
 
-/*
+.footer{
+	position: fixed;
+	bottom:0;
+	left:0;
+}
+
 .section{
 	display: flex;
-	flex-flow: column nowrap;
+	flex-flow:column nowrap;
 	justify-content: center;
 	align-items: center;
 }
-*/
 
 @media (min-width: 320px){
     .section{
 		width: 100vw;
-		background-color: aliceblue;
 	}   
 }
 
 @media (min-width: 768px){
     .section{
 		width: 100vw;
-		background-color: aliceblue;
 	}
 }
 
@@ -112,7 +130,6 @@ table {
     .section{
 		max-width: 1024px;
 		width: 100vw;
-		background-color: aliceblue;
 	}
 }
 
