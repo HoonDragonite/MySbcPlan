@@ -22,6 +22,9 @@ function loadEvents(){
 
     $("#historyAddBtn").click(function(){
         setHistory();
+        getHistory();
+        
+        $("#changeDate").val('');
     });
 }
 
@@ -59,6 +62,8 @@ function setHistory(){
 }
 
 function getHistory(){
+    $("#historyList").children().remove();
+
     let savedChangeDate = localStorage.getItem("changeDate");
     if(savedChangeDate == null){
         console.log("저장된 변경이력이 없습니다.");
@@ -66,15 +71,18 @@ function getHistory(){
     }
     
     let changeDateArr = savedChangeDate.split(",").filter(n => n);
-    console.log(changeDateArr);
 
     for(i in changeDateArr){
-        console.log(i + ", " + changeDateArr[i]);
         $("#historyList").append("<li class=\"history-item\"> <div>" + changeDateArr[i] + "</div></li>");
     }
 }
 
 function seeResult(){
+    /*
+    if($("#userName").val() == ""){
+        alert("이름을 입력하세요.");
+    }
+    */
     location.href ="./result.html";
 }
 
