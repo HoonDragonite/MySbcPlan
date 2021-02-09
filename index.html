@@ -8,62 +8,60 @@
     <meta name="description" content="">
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/index.css" rel="stylesheet" type="text/css">
-    <title>Title</title>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.8.18/themes/base/jquery-ui.css" type="text/css" >
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.18/jquery-ui.min.js"></script>
+
+    <title>나의 청년내일채움공제</title>
 </head>
 <body>
     <div class="container">
         <header class="header">
             <div class="header_item">
-                <h1 class="header_title big-font">나의 청년내일채움공제</h1>
-                <span class="header_subtitle mid-font">적립금 바로 보기</span>
+                <h1 class="header_title big-font-bold">나의 청년내일채움공제</h1>
+                <span class="header_subtitle mid-font-bold">적립금 바로 보기</span>
             </div>
         </header>
         <section class="section">
             <div class="info-area">
-                <div class="big-font">계약 정보</div>
+                <div class="mid-font-bold">계약 정보</div>
                 <div class="info-item">
-                    <label class="info-item_label">
-                        <input class="item_input" type="text" name="name" placeholder="이름">
-                    </label>
+                    <span class="info-item_title small-font">이름</span>
+                    <input class="item_input" type="text" name="userName" id="userName" placeholder="이름">
                 </div>
                 <div class="info-item">
-                    <label class="info-item_label">
-                        <input class="item_input" type="text" name="contractDate" placeholder="계약일자">
-                    </label>
+                    <span class="info-item_title small-font">계약일자</span>
+                    <input class="item_input input_date" type="text" name="contractDate" id="contractDate" placeholder="계약일자">
                 </div>
                 <div class="info-item">
-                    <label class="info-item_label">
-                        <input class="item_input" type="text" name="company" placeholder="업체">
-                    </label>
+                    <span class="info-item_title small-font">업체</span>
+                    <input class="item_input" type="text" name="company" id="company" placeholder="업체">
                 </div>
                 <div class="info-item">
-                    <label class="info-item_label">
-                        <input class="item_input" type="text" name="payDate" placeholder="납부일자">
-                    </label>
+                    <span class="info-item_title small-font">최초납부일자</span>
+                     <input class="item_input input_date" type="text" name="payDate" id="payDate" placeholder="최초납부일자">
                 </div>
             </div>
             <div class="history-area">
                 <span class="mid-font-bold">납부일자 변경이력</span>
-                <ul class="history-list">
-                    <li class="history-item">
-                        <label>
-                            <input class="item_input" type="date" name="changeDate" placeholder="납부일자">
-                        </label>
-                    </li>
-                    <li class="history-item">
-                        <label>
-                            <input class="item_input" type="date" name="changeDate" placeholder="납부일자">
-                        </label>
-                    </li>
+                <div class="history-input">
+                    <input class="item_input" type="text" name="changeDate" id="changeDate" placeholder="변경일자">
+                    <button class="history-add-btn" id="historyAddBtn">+</button>
+                </div>
+                <ul class="history-list" id="historyList">
                 </ul>
-                <div class="add-btn mid-font" id="addBtn">추가하기</div>
             </div>
-            <div class="go-btn mid-font">조회하기</div>
+            <h2 class="mid-font">입력한 계약 정보는 조회 후 PC에 저장됩니다.</h2>
+            <div class="">
+                <div class="info-btn mid-font" id="saveBtn">저장하기</div>
+                <div class="info-btn mid-font" id="resultBtn">조회하기</div>
+            </div>
         </section>
         <footer class="footer">
             <p>This is footer.</p>
         </footer>
     </div>
     <script src="js/script.js"></script>
+    <script src="js/index.js"></script>
 </body>
 </html>

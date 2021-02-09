@@ -52,6 +52,10 @@ table {
 .big-font{
 	font-size: 1.1em;
 }
+.big-font-bold{
+	font-size: 1.1em;
+	font-weight: bold;
+}
 .mid-font{
 	font-size:1.0em;
 }
@@ -94,10 +98,10 @@ table {
 
 .header .header_title{
 	display: block;
-	font-weight: bold;
 }
 
 .header .header_subtitle{
+	margin: 3px;
 	color: black;
 }
 
