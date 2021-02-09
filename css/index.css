@@ -7,6 +7,9 @@
     align-items: center;
     padding: 20px;
 }
+.info-title{
+    margin: 10px;
+}
 .info-item{
     display: flex;
     flex-flow: column nowrap;

@@ -83,6 +83,5 @@ function seeResult(){
         alert("이름을 입력하세요.");
     }
     */
-    location.href ="./result.html";
+    location.href ="./reserves.html";
 }
-
