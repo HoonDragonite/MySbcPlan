@@ -1,4 +1,19 @@
 .summary-area{
+    width: 80%;
     display: flex;
     flex-flow: column nowrap;
+}
+.summary-info{
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+.summary-info_item{
+    display: inline-block;
+}
+.summary-card-list{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
