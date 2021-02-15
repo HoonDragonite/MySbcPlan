@@ -1,7 +1,7 @@
 localStorage = window.localStorage;
 
 loadEvents();
-getValues();
+getLocalStorageValues();
 getHistory();
 setDatePicker();
 
@@ -13,11 +13,11 @@ function setDatePicker(){
 
 function loadEvents(){
     $("#saveBtn").click(function(){
-        setValues();
+        setLocalStorageValues();
     });
 
     $("#resultBtn").click(function(){
-        seeResult();
+        moveToReserves();
     });
 
     $("#historyAddBtn").click(function(){
@@ -28,7 +28,7 @@ function loadEvents(){
     });
 }
 
-function setValues(){
+function setLocalStorageValues(){
     let userName = document.getElementById('userName').value;
     let contractDate = document.getElementById('contractDate').value;
     let company = document.getElementById('company').value;
@@ -40,7 +40,7 @@ function setValues(){
     localStorage.setItem("payDate", payDate);
 }
 
-function getValues(){
+function getLocalStorageValues(){
     $("#userName").val(localStorage.getItem("userName"));
     $("#contractDate").val(localStorage.getItem("contractDate"));
     $("#company").val(localStorage.getItem("company"));
@@ -77,7 +77,7 @@ function getHistory(){
     }
 }
 
-function seeResult(){
+function moveToReserves(){
     /*
     if($("#userName").val() == ""){
         alert("이름을 입력하세요.");

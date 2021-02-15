@@ -4,10 +4,10 @@ let company = "";
 let payDate = "";
 let changeDateArr = [];
 
-getAllValues();
+getLocalStorageValues();
 setUI();
 
-function getAllValues(){
+function getLocalStorageValues(){
     userName = localStorage.getItem("userName");
     contractDate = localStorage.getItem("contractDate");
     company = localStorage.getItem("company");
@@ -29,3 +29,13 @@ function getAllValues(){
 function setUI(){
     $("#userTitle").text(userName + "님 안녕하세요.");
 }
+
+/*
+계산할 것
+
+1. 본인납부금 24회 12.5
+2. 취업지원금 5회  80 120 120 140 140
+3. 기업기여금 5회  50, 60, 60, 60, 70
+
+
+*/
