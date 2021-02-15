@@ -3,9 +3,14 @@ let contractDate = "";
 let company = "";
 let payDate = "";
 let changeDateArr = [];
+let today = "";
+let selfAmt = 0;
+let companyAmt = 0;
+let governmentAmt = 0;
 
 getLocalStorageValues();
 setUI();
+calcYMD();
 
 function getLocalStorageValues(){
     userName = localStorage.getItem("userName");
@@ -28,6 +33,32 @@ function getLocalStorageValues(){
 
 function setUI(){
     $("#userTitle").text(userName + "님 안녕하세요.");
+}
+
+function calcYMD(){
+    let replacedDate = payDate.replace(/-/g, '');
+    alert(replacedDate + ' to ' + getToday());
+}
+
+function getToday(){
+    var date = new Date();
+    var year = date.getFullYear();
+    var month = ("0" + (1 + date.getMonth())).slice(-2);
+    var day = ("0" + date.getDate()).slice(-2);
+
+    return year + month + day;
+}
+
+function calcSelfAmt(){
+    
+}
+
+function calcCompanyAmt(){
+
+}
+
+function calcGovernmentAmt(){
+    
 }
 
 /*
