@@ -1,3 +1,7 @@
+.user-title-area{
+    margin: 10px;
+    text-align: center;
+}
 .summary-area{
     width: 80%;
     display: flex;
@@ -7,13 +11,51 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    margin:10px;
 }
 .summary-info_item{
-    display: inline-block;
+    display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
 }
 .summary-card-list{
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+}
+
+.summary-card{
+	display: flex;
+	flex-flow: column nowrap;
+	align-items: center;
+	justify-content: center;
+}
+
+@media (min-width: 320px){
+    .summary-card{
+        flex-basis: 23%;
+    }
+    .summary-card_stamp{
+        width: 80px;
+    }
+}
+
+@media (min-width: 768px){
+    .summary-card{
+        flex-basis: 20%;
+    }
+    .summary-card_stamp{
+        width: 90px;
+    }
+}
+
+@media (min-width: 1024px){
+    .summary-card{
+        flex-basis: 15%;
+    }
+    .summary-card_stamp{
+        width: 100px;
+    }
 }
