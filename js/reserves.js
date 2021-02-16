@@ -13,9 +13,12 @@ let governmentAmt = 0;
 let totalAmt = 0;
 
 /* pointCounting */
-let pointCount = 0;
-const monthCount = 24;
-
+let selfPointCount = 0;
+let compPointCount = 0;
+let govPointCount = 0;
+const totalMonthCount = 24;
+const totalCompCount = 5;
+const totalGovCount = 5;
 
 getLocalStorageValues();
 calculateAmt();
@@ -44,7 +47,7 @@ function calculateAmt(){
     let momentPayDate = moment(payDate).format('YYYY-MM-DD');
     let momentToday = moment().format('YYYY-MM-DD');
     
-    for(let i=0; i<monthCount; i++){
+    for(let i=0; i<totalMonthCount; i++){
         if(moment(momentPayDate).isSameOrBefore(momentToday)){
             if(i+1 == 1){
                 governmentAmt += 800000;
@@ -64,16 +67,28 @@ function calculateAmt(){
             }
             selfAmt += 125000;
 
-            pointCount++;
+            if(i+1 == 1 || i+1 == 6 || i+1 == 12 || i+1 == 18 || i+1 == 24){
+                compPointCount++;
+                govPointCount++;
+            }
+            selfPointCount++;
+
             momentPayDate = moment(momentPayDate).add(1, 'months').format('YYYY-MM-DD');
         }
     }
 
     totalAmt = selfAmt + companyAmt + governmentAmt;
-    console.log('총금액 : ' + totalAmt);
 }
 
 function setComponentValues(){
     $("#userTitle").text(userName + "님 안녕하세요.");
     $("#totalAmt").text(totalAmt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+    $("#selfAmt").text(selfAmt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+    $("#governmentAmt").text(governmentAmt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+    $("#companyAmt").text(companyAmt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
+
+    $("#pointCount").text(selfPointCount + "/" + totalMonthCount);
+    $("#selfPointCount").text(selfPointCount + "/" + totalMonthCount);
+    $("#compPointCount").text(compPointCount + "/" + totalCompCount);
+    $("#govPointCount").text(govPointCount + "/" + totalGovCount);
 }
