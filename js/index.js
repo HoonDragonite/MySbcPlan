@@ -7,6 +7,10 @@ getLocalStorageValues();
 getHistory();
 setDatePicker();
 
+$(window).load(function () {
+    $('body').sakura();
+});
+
 function setDatePicker(){
     $("#contractDate").datepicker({
         dateformat: "yyyy-mm-dd"
