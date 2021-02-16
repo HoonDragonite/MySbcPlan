@@ -18,9 +18,8 @@ const monthCount = 24;
 
 
 getLocalStorageValues();
-setComponentValues();
 calculateAmt();
-
+setComponentValues();
 
 function getLocalStorageValues(){
     userName = localStorage.getItem("userName");
@@ -39,10 +38,6 @@ function getLocalStorageValues(){
             console.log(i + ", " + changeDateArr[i]);
         }
     }
-}
-
-function setComponentValues(){
-    $("#userTitle").text(userName + "님 안녕하세요.");
 }
 
 function calculateAmt(){
@@ -75,4 +70,10 @@ function calculateAmt(){
     }
 
     totalAmt = selfAmt + companyAmt + governmentAmt;
+    console.log('총금액 : ' + totalAmt);
+}
+
+function setComponentValues(){
+    $("#userTitle").text(userName + "님 안녕하세요.");
+    $("#totalAmt").text(totalAmt.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ","));
 }

@@ -1,13 +1,20 @@
 .user-title-area{
     margin: 10px;
+    height: 80px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    align-items: center;
     text-align: center;
 }
+
 .summary-area{
     width: 80%;
     display: flex;
     flex-flow: column nowrap;
 }
 .summary-info{
+    height: 80px;
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -15,6 +22,7 @@
     margin:15px;
 }
 .summary-info_item{
+    height: 60px;
     display: flex;
 	flex-flow: column nowrap;
 	align-items: center;
@@ -38,7 +46,7 @@
         flex-basis: 23%;
     }
     .summary-card_stamp{
-        width: 80px;
+        width: 60px;
     }
 }
 
@@ -47,7 +55,7 @@
         flex-basis: 20%;
     }
     .summary-card_stamp{
-        width: 90px;
+        width: 70px;
     }
 }
 
@@ -56,6 +64,6 @@
         flex-basis: 15%;
     }
     .summary-card_stamp{
-        width: 100px;
+        width: 80px;
     }
 }
