@@ -1,5 +1,7 @@
+/* LocalStorage 불러오기 */
 localStorage = window.localStorage;
 
+/* 메소드 실행 */
 loadEvents();
 getLocalStorageValues();
 getHistory();
@@ -7,8 +9,8 @@ setDatePicker();
 
 function setDatePicker(){
     $("#contractDate").datepicker({dateformat: "yyyy-mm-dd"});
-    $("#payDate").datepicker({});
-    $("#changeDate").datepicker({});
+    $("#payDate").datepicker({dateformat: "yyyy-mm-dd"});
+    $("#changeDate").datepicker({dateformat: "yyyy-mm-dd"});
 }
 
 function loadEvents(){

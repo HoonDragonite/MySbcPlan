@@ -20,6 +20,7 @@ const totalMonthCount = 24;
 const totalCompCount = 5;
 const totalGovCount = 5;
 
+/* 메소드 실행 */
 getLocalStorageValues();
 calculateAmt();
 setComponentValues();

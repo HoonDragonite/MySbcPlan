@@ -31,3 +31,10 @@ CSS3
 Javascript  
 ### Library
 Moment.js
+
+## To Do
+1. index.html Datepicker MaskBox
+2. index.html 저장 완료 시 알 수 있게 개선
+3. index.html 흩날리는 돈
+4. 납부일자 변경이력 로직 추가하기
+5. BackBtn 만들기
