@@ -28,6 +28,8 @@
 }
 .item_input:focus{
     font-size: 1.1em;
+    outline: none;
+    border-radius: 50px;
     background-color: floralwhite;
 }
 .item_input:hover{

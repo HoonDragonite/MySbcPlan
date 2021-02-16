@@ -14,11 +14,8 @@ function setDatePicker(){
 }
 
 function loadEvents(){
-    $("#saveBtn").click(function(){
-        setLocalStorageValues();
-    });
-
     $("#resultBtn").click(function(){
+        setLocalStorageValues();
         moveToReserves();
     });
 
