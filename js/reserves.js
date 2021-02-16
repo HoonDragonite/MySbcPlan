@@ -72,9 +72,9 @@ function calculateAmt(){
                 govPointCount++;
             }
             selfPointCount++;
-
-            momentPayDate = moment(momentPayDate).add(1, 'months').format('YYYY-MM-DD');
         }
+
+        momentPayDate = moment(momentPayDate).add(1, 'months').format('YYYY-MM-DD');
     }
 
     totalAmt = selfAmt + companyAmt + governmentAmt;
@@ -91,4 +91,28 @@ function setComponentValues(){
     $("#selfPointCount").text(selfPointCount + "/" + totalMonthCount);
     $("#compPointCount").text(compPointCount + "/" + totalCompCount);
     $("#govPointCount").text(govPointCount + "/" + totalGovCount);
+
+    let momentPayDate = moment(payDate).format('YYYY-MM-DD');
+    let momentToday = moment().format('YYYY-MM-DD');
+    let card = "";
+
+    for(let i=0; i<totalMonthCount; i++){
+        if(moment(momentPayDate).isSameOrBefore(momentToday)){
+            card = "<li class=\"summary-card\"> " + 
+                        "<img src=\"./image/stamp-solid.svg\" class=\"summary-card_stamp\">" +
+                        "<span class=\"summary-card_date small-font\">" + momentPayDate + "</span>" +
+                    "</li>";
+            $("#summaryCardList").append(card);
+        }
+        else{
+            card = "<li class=\"summary-card\"> " + 
+                        "<img src=\"./image/stamp-gray.svg\" class=\"summary-card_stamp\">" +
+                        "<span class=\"summary-card_date small-font\">" + momentPayDate + "</span>" +
+                    "</li>";
+            $("#summaryCardList").append(card);
+        }
+        
+        console.log(card);
+        momentPayDate = moment(momentPayDate).add(1, 'months').format('YYYY-MM-DD');
+    }
 }
