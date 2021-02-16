@@ -13,6 +13,9 @@
 .info-item{
     display: flex;
     flex-flow: column nowrap;
+    /*
+    justify-content: center;
+    align-items: center;*/
 }
 .info-item_title{
     margin:5px;
