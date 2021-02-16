@@ -8,12 +8,22 @@ getHistory();
 setDatePicker();
 
 function setDatePicker(){
-    $("#contractDate").datepicker({dateformat: "yyyy-mm-dd"});
-    $("#payDate").datepicker({dateformat: "yyyy-mm-dd"});
-    $("#changeDate").datepicker({dateformat: "yyyy-mm-dd"});
+    $("#contractDate").datepicker({
+        dateformat: "yyyy-mm-dd"
+    });
+    $("#payDate").datepicker({
+        dateformat: "yyyy-mm-dd"
+    });
+    $("#changeDate").datepicker({
+        dateformat: "yyyy-mm-dd"
+    });
 }
 
 function loadEvents(){
+    $(".input_date").focusout(function(){
+        $(this).val(moment(this.value).format('YYYY-MM-DD'));
+    });
+    
     $("#resultBtn").click(function(){
         setLocalStorageValues();
         moveToReserves();
@@ -22,7 +32,6 @@ function loadEvents(){
     $("#historyAddBtn").click(function(){
         setHistory();
         getHistory();
-        
         $("#changeDate").val('');
     });
 }
