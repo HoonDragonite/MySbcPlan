@@ -21,9 +21,11 @@ const totalCompCount = 5;
 const totalGovCount = 5;
 
 /* 메소드 실행 */
-getLocalStorageValues();
-calculateAmt();
-setComponentValues();
+$(document).ready(function(){
+    getLocalStorageValues();
+    calculateAmt();
+    setComponentValues();
+});
 
 function getLocalStorageValues(){
     userName = localStorage.getItem("userName");
@@ -113,7 +115,6 @@ function setComponentValues(){
             $("#summaryCardList").append(card);
         }
         
-        console.log(card);
         momentPayDate = moment(momentPayDate).add(1, 'months').format('YYYY-MM-DD');
     }
 }
