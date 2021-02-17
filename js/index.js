@@ -1,13 +1,36 @@
 /* LocalStorage 불러오기 */
 localStorage = window.localStorage;
 
-/* 메소드 실행 */
-loadEvents();
-getLocalStorageValues();
-getHistory();
-setDatePicker();
+$(document).ready(function(){
+    console.log("document ready");
+    getLocalStorageValues();
+    getHistory();
+    setDatePicker();
+    
+    $(".input_date").focusout(function(){
+        if(moment(this.value).isValid() == true){
+            $(this).val(moment(this.value).format('YYYY-MM-DD'));
+        }
+    });
+    
+    $("#resultBtn").click(function(){
+        if(checkValidation() == false){
+            alert("날짜의 형식이 잘 못 되었거나 입력되지 않았습니다.");
+            return;
+        }
+        setLocalStorageValues();
+        moveToReserves();
+    });
+
+    $("#historyAddBtn").click(function(){
+        setHistory();
+        getHistory();
+        $("#changeDate").val('');
+    });
+});
 
 $(window).load(function () {
+    console.log("windows load");
     $('body').sakura();
 });
 
@@ -23,21 +46,18 @@ function setDatePicker(){
     });
 }
 
-function loadEvents(){
-    $(".input_date").focusout(function(){
-        $(this).val(moment(this.value).format('YYYY-MM-DD'));
-    });
-    
-    $("#resultBtn").click(function(){
-        setLocalStorageValues();
-        moveToReserves();
-    });
+function checkValidation(){
+    let result = true;
 
-    $("#historyAddBtn").click(function(){
-        setHistory();
-        getHistory();
-        $("#changeDate").val('');
-    });
+    if(moment($("#contractDate").val()).isValid() == false){
+        result = false;
+    }
+
+    if(moment($("#payDate").val()).isValid() == false){
+        result = false;
+    }
+
+    return result;
 }
 
 function setLocalStorageValues(){
