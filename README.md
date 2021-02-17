@@ -42,3 +42,7 @@ Moment.js
 ## Issue
 1. Edge로 접속해서 저장된 LocalStorage와 크롬 LocalStorage가 다른 것 같음
     -> Edge에서 저장해놓고 크롬으로 들어가면 저장 안 되어 있음
+
+## 글 쓸 거리
+1. document ready, window load 차이
+2. localStorage에 대해 +브라우저별 저장소
