@@ -5,7 +5,6 @@ $(document).ready(function(){
     console.log("document ready");
     getLocalStorageValues();
     getHistory();
-    setDatePicker();
     
     $(".input_date").focusout(function(){
         if(moment(this.value).isValid() == true){
@@ -33,18 +32,6 @@ $(window).load(function () {
     console.log("windows load");
     $('body').sakura();
 });
-
-function setDatePicker(){
-    $("#contractDate").datepicker({
-        dateformat: "yyyy-mm-dd"
-    });
-    $("#payDate").datepicker({
-        dateformat: "yyyy-mm-dd"
-    });
-    $("#changeDate").datepicker({
-        dateformat: "yyyy-mm-dd"
-    });
-}
 
 function checkValidation(){
     let result = true;
