@@ -53,7 +53,7 @@
         var defaults = {
             blowAnimations: ['blow-soft-left', 'blow-medium-left', 'blow-hard-left', 'blow-soft-right', 'blow-medium-right', 'blow-hard-right'],
             className: 'sakura',
-            fallSpeed: 2, //떨어지는 속도
+            fallSpeed: 1.5, //떨어지는 속도
             maxSize: 14,
             minSize: 9,
             newOn: 300,
