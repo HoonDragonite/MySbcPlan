@@ -26,6 +26,17 @@ $(document).ready(function(){
         getHistory();
         $("#changeDate").val('');
     });
+
+    $('#payDay').on({
+        'focus' : function () {
+            $(this).parent().addClass('focus');
+        },
+        'blur' : function () {
+            $(this).parent().removeClass('focus');
+        }
+    });
+    
+
 });
 
 $(window).load(function () {

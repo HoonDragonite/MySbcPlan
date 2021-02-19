@@ -44,16 +44,15 @@
                 <div class="small-font">(마이페이지 > 상품계약관리 > 핵심인력 > </div>
                 <div class="small-font">청약가입정보 > 핵심인력 최초입금일)</div>
             </div>
-            <div class="history-area">
-                <span class="mid-font-bold">납부일자 변경이력(개발중)</span>
-                <div class="history-input">
-                    <input class="item_input input_date small-font" type="text" name="changeDate" id="changeDate" placeholder="ex) 2020-01-01">
-                    <button class="history-add-btn" id="historyAddBtn">+</button>
+            <div class="pay-day-area">
+                <div class="margin-five small-font">당월 납부일자</div>
+                <div class="select-box">
+                    <select id="payDay">
+                        <option>5일</option>
+                        <option>10일</option>
+                        <option>15일</option>
+                    </select>
                 </div>
-                <ul class="history-list" id="historyList">
-                    <!-- index.js -> history-item start  -->
-                    <!-- index.js -> history-item end  -->
-                </ul>
             </div>
             <h2 class="mid-font">입력한 계약 정보는 조회 후 PC에 저장됩니다.</h2>
             <div class="">
