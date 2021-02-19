@@ -3,8 +3,8 @@ localStorage = window.localStorage;
 
 $(document).ready(function(){
     console.log("document ready");
+
     getLocalStorageValues();
-    getHistory();
     
     $(".input_date").focusout(function(){
         if(moment(this.value).isValid() == true){
@@ -20,23 +20,6 @@ $(document).ready(function(){
         setLocalStorageValues();
         moveToReserves();
     });
-
-    $("#historyAddBtn").click(function(){
-        setHistory();
-        getHistory();
-        $("#changeDate").val('');
-    });
-
-    $('#payDay').on({
-        'focus' : function () {
-            $(this).parent().addClass('focus');
-        },
-        'blur' : function () {
-            $(this).parent().removeClass('focus');
-        }
-    });
-    
-
 });
 
 $(window).load(function () {
@@ -64,6 +47,7 @@ function setLocalStorageValues(){
     let company = document.getElementById('company').value;
     let payDate = document.getElementById('payDate').value;
     let payDay = $("#payDay").val();
+
     localStorage.setItem("userName", userName);
     localStorage.setItem("contractDate", contractDate);
     localStorage.setItem("company", company);
@@ -83,36 +67,6 @@ function getLocalStorageValues(){
     console.log(localStorage.getItem("company"));
     console.log(localStorage.getItem("payDate"));
     console.log(localStorage.getItem("payDay"));
-}
-
-function setHistory(){
-    let newChangeDate = $("#changeDate").val().trim();
-    let changeDate = localStorage.getItem("changeDate");
-
-    if(changeDate == null){
-        console.log("저장된 변경이력이 없습니다.");
-        changeDate = "";
-    }
-
-    changeDate = changeDate + newChangeDate + ",";
-
-    localStorage.setItem("changeDate", changeDate);
-}
-
-function getHistory(){
-    $("#historyList").children().remove();
-
-    let savedChangeDate = localStorage.getItem("changeDate");
-    if(savedChangeDate == null){
-        console.log("저장된 변경이력이 없습니다.");
-        savedChangeDate = "";
-    }
-    
-    let changeDateArr = savedChangeDate.split(",").filter(n => n);
-
-    for(i in changeDateArr){
-        $("#historyList").append("<li class=\"history-item\"> <div>" + changeDateArr[i] + "</div></li>");
-    }
 }
 
 function moveToReserves(){

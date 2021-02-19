@@ -3,8 +3,7 @@ let userName = "";
 let contractDate = "";
 let company = "";
 let payDate = ""; // "yyyy-MM-dd"
-let savedChangeDate = "";
-let changeDateArr = [];
+let payDay = ""; // 5, 10, 15 
 
 /* Amt */
 let selfAmt = 0;
@@ -32,18 +31,14 @@ function getLocalStorageValues(){
     contractDate = localStorage.getItem("contractDate");
     company = localStorage.getItem("company");
     payDate = localStorage.getItem("payDate");
-    savedChangeDate = localStorage.getItem("changeDate");
-
-    if(savedChangeDate == null){
-        console.log("저장된 변경이력이 없습니다.");
-        savedChangeDate = "";
-    }
-    else{
-        changeDateArr = savedChangeDate.split(",").filter(n => n); // ,구분자로 나누어 날짜를 배열에 넣음
-        for(i in changeDateArr){
-            console.log(i + ", " + changeDateArr[i]);
-        }
-    }
+    payDay = localStorage.getItem("payDay");
+    
+    console.log(userName);
+    console.log(contractDate);
+    console.log(company);
+    console.log(payDate);
+    console.log(payDay);
+    
 }
 
 function calculateAmt(){

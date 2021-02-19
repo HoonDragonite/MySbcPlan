@@ -118,14 +118,6 @@ table {
 	margin: 5px;
 }
 
-select {
-	width: 160px; /* 원하는 너비설정 */
-    padding: .8em .5em; /* 여백으로 높이 설정 */
-    font-family: inherit;  /* 폰트 상속 */
-    border-radius: 0px; /* iOS 둥근모서리 제거 */
-
-}
-
 @media (min-width: 320px){
 	.section{
 		width: 100vw;
