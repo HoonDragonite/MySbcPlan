@@ -63,11 +63,12 @@ function setLocalStorageValues(){
     let contractDate = document.getElementById('contractDate').value;
     let company = document.getElementById('company').value;
     let payDate = document.getElementById('payDate').value;
-
+    let payDay = $("#payDay").val();
     localStorage.setItem("userName", userName);
     localStorage.setItem("contractDate", contractDate);
     localStorage.setItem("company", company);
     localStorage.setItem("payDate", payDate);
+    localStorage.setItem("payDay", payDay);
 }
 
 function getLocalStorageValues(){
@@ -75,6 +76,13 @@ function getLocalStorageValues(){
     $("#contractDate").val(localStorage.getItem("contractDate"));
     $("#company").val(localStorage.getItem("company"));
     $("#payDate").val(localStorage.getItem("payDate"));
+    $("#payDay").val(localStorage.getItem("payDay"));
+
+    console.log(localStorage.getItem("userName"));
+    console.log(localStorage.getItem("contractDate"));
+    console.log(localStorage.getItem("company"));
+    console.log(localStorage.getItem("payDate"));
+    console.log(localStorage.getItem("payDay"));
 }
 
 function setHistory(){
@@ -108,10 +116,5 @@ function getHistory(){
 }
 
 function moveToReserves(){
-    /*
-    if($("#userName").val() == ""){
-        alert("이름을 입력하세요.");
-    }
-    */
     location.href ="./reserves.html";
 }
