@@ -38,40 +38,46 @@ function getLocalStorageValues(){
     console.log(company);
     console.log(payDate);
     console.log(payDay);
-    
 }
 
 function calculateAmt(){
-    let momentPayDate = moment(payDate).format('YYYY-MM-DD');
+    let momentPayDate = moment(payDate).format('YYYY-MM-DD'); // 최초납부일부터의 납부일들
     let momentToday = moment().format('YYYY-MM-DD');
-    
-    for(let i=0; i<totalMonthCount; i++){
-        if(moment(momentPayDate).isSameOrBefore(momentToday)){
-            if(i+1 == 1){
-                governmentAmt += 800000;
-                companyAmt += 500000;
-            } else if(i+1 == 6){
-                governmentAmt += 1200000;
-                companyAmt += 600000;
-            } else if(i+1 == 12){
-                governmentAmt += 1200000;
-                companyAmt += 600000;
-            } else if(i+1 == 18){
-                governmentAmt += 1400000;
-                companyAmt += 600000;
-            } else if(i+1 == 24){
-                governmentAmt += 1400000;
-                companyAmt += 700000;
-            }
-            selfAmt += 125000;
+    let momentCurrentPayDate = moment().date(payDay).format('YYYY-MM-DD'); // 당월납부일
+    let i = 1;
 
-            if(i+1 == 1 || i+1 == 6 || i+1 == 12 || i+1 == 18 || i+1 == 24){
-                compPointCount++;
-                govPointCount++;
+    while(moment(momentPayDate).isSameOrBefore(momentToday)){
+        if(moment(momentPayDate).month() == moment(momentToday).month()){
+            if(moment(momentToday).isBefore(momentCurrentPayDate)){
+                break;
             }
-            selfPointCount++;
         }
+            
+        if(i+1 == 1){
+            governmentAmt += 800000;
+            companyAmt += 500000;
+        } else if(i+1 == 6){
+            governmentAmt += 1200000;
+            companyAmt += 600000;
+        } else if(i+1 == 12){
+            governmentAmt += 1200000;
+            companyAmt += 600000;
+        } else if(i+1 == 18){
+            governmentAmt += 1400000;
+            companyAmt += 600000;
+        } else if(i+1 == 24){
+            governmentAmt += 1400000;
+            companyAmt += 700000;
+        }
+        selfAmt += 125000;
 
+        if(i+1 == 1 || i+1 == 6 || i+1 == 12 || i+1 == 18 || i+1 == 24){
+            compPointCount++;
+            govPointCount++;
+        }
+        selfPointCount++;
+
+        i++;
         momentPayDate = moment(momentPayDate).add(1, 'months').format('YYYY-MM-DD');
     }
 
@@ -90,26 +96,19 @@ function setComponentValues(){
     $("#compPointCount").text(compPointCount + "/" + totalCompCount);
     $("#govPointCount").text(govPointCount + "/" + totalGovCount);
 
-    let momentPayDate = moment(payDate).format('YYYY-MM-DD');
-    let momentToday = moment().format('YYYY-MM-DD');
     let card = "";
 
-    for(let i=0; i<totalMonthCount; i++){
-        if(moment(momentPayDate).isSameOrBefore(momentToday)){
-            card = "<li class=\"summary-card\"> " + 
-                        "<img src=\"./image/stamp-solid.svg\" class=\"summary-card_stamp\">" +
-                        "<span class=\"summary-card_date small-font\">" + momentPayDate + "</span>" +
-                    "</li>";
-            $("#summaryCardList").append(card);
-        }
-        else{
-            card = "<li class=\"summary-card\"> " + 
-                        "<img src=\"./image/stamp-gray.svg\" class=\"summary-card_stamp\">" +
-                        "<span class=\"summary-card_date small-font\">" + momentPayDate + "</span>" +
-                    "</li>";
-            $("#summaryCardList").append(card);
-        }
-        
-        momentPayDate = moment(momentPayDate).add(1, 'months').format('YYYY-MM-DD');
+    for(let i=0; i<selfPointCount; i++){
+        card = "<li class=\"summary-card\"> " + 
+                    "<img src=\"./image/stamp-solid.svg\" class=\"summary-card_stamp\">"
+                "</li>";
+        $("#summaryCardList").append(card);
     }
+    for(let i=0; i<totalMonthCount - selfPointCount; i++){
+        card = "<li class=\"summary-card\"> " + 
+                    "<img src=\"./image/stamp-gray.svg\" class=\"summary-card_stamp\">"
+                "</li>";
+        $("#summaryCardList").append(card);
+    }
+
 }
