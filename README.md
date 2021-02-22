@@ -32,16 +32,16 @@ CSS3
 Javascript  
 ### Library
 Moment.js
+Falling Sakura (https://codepen.io/parkgun/pen/dmQRaX)
 
 ## To Do
-1. index.html 저장 완료 시 알 수 있게 개선
-2. BackBtn 만들기
-3. 본인납부 진행현황 막대그래프 그려보기
+1. BackBtn 만들기  
+2. 본인납부 진행현황 막대그래프 그려보기  
+3. 모바일에서 키패드 올리면 index.html 디자인 깨짐  
 
 ## Issue
 1. Edge로 접속해서 저장된 LocalStorage와 크롬 LocalStorage가 다른 것 같음  
-    -> Edge에서 저장해놓고 크롬으로 들어가면 저장 안 되어 있음  
-2. 모바일에서 키패드 올리면 index.html 디자인 깨짐
+    -> Edge에서 저장해놓고 크롬으로 들어가면 저장 안 되어 있음    
 
 ## 글 쓸 거리
 1. document ready, window load 차이
