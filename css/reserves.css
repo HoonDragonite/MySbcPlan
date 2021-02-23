@@ -21,8 +21,8 @@
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
-    justify-content: space-around;
-    margin:15px;
+    justify-content: center;
+    margin:10px;
 }
 .summary-info_item{
     height: 60px;
@@ -30,6 +30,10 @@
 	flex-flow: column nowrap;
 	align-items: center;
 	justify-content: space-around;
+    border: 0.1px solid #000;
+    border-radius: 20px;
+    padding: 10px;
+    margin:5px;
 }
 
 .bar-background{
