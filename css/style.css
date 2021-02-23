@@ -124,12 +124,13 @@ body{
 .header-back-btn{
 	padding:15px;
 	border-radius: 10px;
-	background: cornflowerblue;
+	background-color: cornflowerblue;
 	border:none;
+	outline:none;
 	color: white;
 }
 .header-back-btn:hover, .header-back-btn:focus{
-	background: dodgerblue;
+	background-color: dodgerblue;
 	cursor: pointer;
 }
 .header .header_title{
