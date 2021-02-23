@@ -8,6 +8,7 @@
 }
 .info-title{
     margin: 10px;
+    white-space:nowrap;
 }
 .info-item{
     display: flex;
@@ -15,6 +16,7 @@
 }
 .info-item_title{
     margin:5px;
+    white-space:nowrap;
 }
 .item_input{
     width: 160px;

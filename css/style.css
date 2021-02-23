@@ -51,23 +51,29 @@ table {
 
 .big-font{
 	font-size: 1.1em;
+	white-space:nowrap;
 }
 .big-font-bold{
 	font-size: 1.1em;
 	font-weight: bold;
+	white-space:nowrap;
 }
 .mid-font{
 	font-size:1.0em;
+	white-space:nowrap;
 }
 .mid-font-bold{
 	font-size:1.0em;
 	font-weight: bold;
+	white-space:nowrap;
 }
 .small-font{
 	font-size: 0.9em;
+	white-space:nowrap;
 }
 .center-font{
 	text-align: center;
+	white-space:nowrap;
 }
 .blue-font{
 	color:cornflowerblue;
@@ -99,11 +105,13 @@ table {
 
 .header .header_title{
 	display: block;
+	white-space:nowrap;
 }
 
 .header .header_subtitle{
 	margin: 3px;
 	color: black;
+	white-space:nowrap;
 }
 
 .footer{
