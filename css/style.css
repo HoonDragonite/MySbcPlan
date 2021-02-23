@@ -107,7 +107,31 @@ body{
 	justify-content: center;
 	align-items: center;
 }
-
+.header-left{
+	position: absolute;
+	left: 0;
+	top : 0;
+	height: 80px;
+	margin-left: 10px;
+}
+.header-right{
+	position: absolute;
+	right: 0;
+	top : 0;
+	height: 80px;
+	margin-right: 10px;
+}
+.header-back-btn{
+	padding:15px;
+	border-radius: 10px;
+	background: cornflowerblue;
+	border:none;
+	color: white;
+}
+.header-back-btn:hover, .header-back-btn:focus{
+	background: dodgerblue;
+	cursor: pointer;
+}
 .header .header_title{
 	display: block;
 	white-space:nowrap;
@@ -152,6 +176,12 @@ body{
     .section{
 		max-width: 1024px;
 		width: 100%;
+	}
+	.header-left{
+		left: 400px;
+	}
+	.header-right{
+		right: 400px;
 	}
 }
 

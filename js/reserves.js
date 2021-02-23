@@ -21,6 +21,10 @@ const totalGovCount = 5;
 
 /* 메소드 실행 */
 $(document).ready(function(){
+    $("#backBtn").click(function(){
+        window.history.back();
+    });
+
     getLocalStorageValues();
     calculateAmt();
     setComponentValues();
