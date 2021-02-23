@@ -37,6 +37,7 @@
 }
 
 .bar-background{
+    margin-top: 10px;
     background: lightgray;
     width: 80%;
     height: 14px;
