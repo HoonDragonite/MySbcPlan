@@ -96,19 +96,19 @@ function setComponentValues(){
     $("#compPointCount").text(compPointCount + "/" + totalCompCount);
     $("#govPointCount").text(govPointCount + "/" + totalGovCount);
 
-    let card = "";
+    // alert(selfPointCount/totalMonthCount * 100);
+    let per = selfPointCount/totalMonthCount * 100;
 
-    for(let i=0; i<selfPointCount; i++){
-        card = "<li class=\"summary-card\"> " + 
-                    "<img src=\"./image/stamp-solid.svg\" class=\"summary-card_stamp\">"
-                "</li>";
-        $("#summaryCardList").append(card);
+    
+    let elem = document.getElementById("myBar");
+    let width = 1;
+    let id = setInterval(frame, 10);
+    function frame() {
+        if (width >= per) {
+            clearInterval(id);
+        } else {
+            width++; 
+            elem.style.width = width + '%'; 
+        }
     }
-    for(let i=0; i<totalMonthCount - selfPointCount; i++){
-        card = "<li class=\"summary-card\"> " + 
-                    "<img src=\"./image/stamp-gray.svg\" class=\"summary-card_stamp\">"
-                "</li>";
-        $("#summaryCardList").append(card);
-    }
-
 }
