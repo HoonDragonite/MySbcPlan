@@ -73,8 +73,8 @@ table {
 	color:cornflowerblue;
 }
 .container{
-	width: 100vw;
-	height: 100vh;
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -107,7 +107,7 @@ table {
 }
 
 .footer{
-	position: fixed;
+	position: absolute;
 	bottom:0;
 	left:0;
 }
@@ -125,20 +125,20 @@ table {
 
 @media (min-width: 320px){
 	.section{
-		width: 100vw;
+		width: 100%;
 	}   
 }
 
 @media (min-width: 768px){
     .section{
-		width: 100vw;
+		width: 100%;
 	}
 }
 
 @media (min-width: 1024px){
     .section{
 		max-width: 1024px;
-		width: 100vw;
+		width: 100%;
 	}
 }
 

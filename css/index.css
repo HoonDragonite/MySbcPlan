@@ -1,6 +1,5 @@
 .info-area{
     width: 60%;
-    height: 40vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-around;
