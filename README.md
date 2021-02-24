@@ -19,9 +19,8 @@
     - 이름  
     - 계약일자  
     - 업체명  
-    - 핵심인력 납부일자  
-    - 중소기업 이체일  
-    - 납부예정일 변경 여부 확인  
+    - 최초 납부일자
+    - 당월 납부일자
 2. 납부금액 조회
     - 계약일자부터 현재일자까지 적립된 금액을 조회한다.
 
@@ -36,6 +35,7 @@ HTML5
 CSS3  
 Javascript  
 ### Library
+jquery 1.7.1  
 Moment.js  
 Falling Sakura (https://codepen.io/parkgun/pen/dmQRaX)  
 store.js  
