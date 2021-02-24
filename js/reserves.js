@@ -30,6 +30,11 @@ $(document).ready(function(){
     setComponentValues();
 });
 
+$(window).load(function () {
+    console.log("windows load");
+    $('body').sakura();
+});
+
 function getLocalStorageValues(){
     userName = localStorage.getItem("userName");
     contractDate = localStorage.getItem("contractDate");
