@@ -38,10 +38,8 @@ Javascript
 ### Library
 Moment.js  
 Falling Sakura (https://codepen.io/parkgun/pen/dmQRaX)  
+store.js  
 
 ## Issue
-1. LocalStorage 크로스 브라우징
-
-## 글 쓸 거리
-1. document ready, window load 차이
-2. localStorage
+1. LocalStorage 크로스 브라우징  
+  -> store.js 이용
