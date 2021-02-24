@@ -28,7 +28,7 @@
 ## 화면
 |             홈              |           결과조회            |
 | :-------------------------: | :---------------------------: |
-| <img src="./guide/1.png"> | <img src="./guide/2.png"> |
+| <img src="guide/1.PNG"> | <img src="guide/2.PNG"> |
 
 ## Tech Stack
 ### Language
