@@ -36,17 +36,11 @@ $(window).load(function () {
 });
 
 function getLocalStorageValues(){
-    userName = localStorage.getItem("userName");
-    contractDate = localStorage.getItem("contractDate");
-    company = localStorage.getItem("company");
-    payDate = localStorage.getItem("payDate");
-    payDay = localStorage.getItem("payDay");
-    
-    console.log(userName);
-    console.log(contractDate);
-    console.log(company);
-    console.log(payDate);
-    console.log(payDay);
+    userName = store.get("userName");
+    contractDate = store.get("contractDate");
+    company = store.get("company");
+    payDate = store.get("payDate");
+    payDay = store.get("payDay");
 }
 
 function calculateAmt(){

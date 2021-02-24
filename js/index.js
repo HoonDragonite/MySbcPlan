@@ -1,6 +1,3 @@
-/* LocalStorage 불러오기 */
-localStorage = window.localStorage;
-
 $(document).ready(function(){
     console.log("document ready");
 
@@ -48,25 +45,19 @@ function setLocalStorageValues(){
     let payDate = document.getElementById('payDate').value;
     let payDay = $("#payDay").val();
 
-    localStorage.setItem("userName", userName);
-    localStorage.setItem("contractDate", contractDate);
-    localStorage.setItem("company", company);
-    localStorage.setItem("payDate", payDate);
-    localStorage.setItem("payDay", payDay);
+    store.set("userName", userName);
+    store.set("contractDate", contractDate);
+    store.set("company", company);
+    store.set("payDate", payDate);
+    store.set("payDay", payDay);
 }
 
 function getLocalStorageValues(){
-    $("#userName").val(localStorage.getItem("userName"));
-    $("#contractDate").val(localStorage.getItem("contractDate"));
-    $("#company").val(localStorage.getItem("company"));
-    $("#payDate").val(localStorage.getItem("payDate"));
-    $("#payDay").val(localStorage.getItem("payDay"));
-
-    console.log(localStorage.getItem("userName"));
-    console.log(localStorage.getItem("contractDate"));
-    console.log(localStorage.getItem("company"));
-    console.log(localStorage.getItem("payDate"));
-    console.log(localStorage.getItem("payDay"));
+    $("#userName").val(store.get("userName"));
+    $("#contractDate").val(store.get("contractDate"));
+    $("#company").val(store.get("company"));
+    $("#payDate").val(store.get("payDate"));
+    $("#payDay").val(store.get("payDay"));
 }
 
 function moveToReserves(){
