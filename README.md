@@ -25,6 +25,8 @@
 2. 납부금액 조회
     - 계약일자부터 현재일자까지 적립된 금액을 조회한다.
 
+
+
 ## Tech Stack
 ### Language
 HTML5  
@@ -33,11 +35,6 @@ Javascript
 ### Library
 Moment.js
 Falling Sakura (https://codepen.io/parkgun/pen/dmQRaX)
-
-## To Do
-1. BackBtn 만들기  
-2. 본인납부 진행현황 막대그래프 그려보기  
-3. 모바일에서 키패드 올리면 index.html 디자인 깨짐  
 
 ## Issue
 1. Edge로 접속해서 저장된 LocalStorage와 크롬 LocalStorage가 다른 것 같음  
