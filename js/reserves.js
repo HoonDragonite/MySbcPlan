@@ -56,25 +56,25 @@ function calculateAmt(){
             }
         }
             
-        if(i+1 == 1){
+        if(i == 1){
             governmentAmt += 800000;
             companyAmt += 500000;
-        } else if(i+1 == 6){
+        } else if(i == 6){
             governmentAmt += 1200000;
             companyAmt += 600000;
-        } else if(i+1 == 12){
+        } else if(i == 12){
             governmentAmt += 1200000;
             companyAmt += 600000;
-        } else if(i+1 == 18){
+        } else if(i == 18){
             governmentAmt += 1400000;
             companyAmt += 600000;
-        } else if(i+1 == 24){
+        } else if(i == 24){
             governmentAmt += 1400000;
             companyAmt += 700000;
         }
         selfAmt += 125000;
 
-        if(i+1 == 1 || i+1 == 6 || i+1 == 12 || i+1 == 18 || i+1 == 24){
+        if(i == 1 || i == 6 || i == 12 || i == 18 || i == 24){
             compPointCount++;
             govPointCount++;
         }
