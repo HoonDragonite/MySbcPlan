@@ -74,3 +74,23 @@
     background-color: dodgerblue;
     cursor: pointer;
 }
+
+.clear-btn{
+    display: inline-block;
+    margin-top: 10px;
+    box-sizing: border-box;
+    text-align: center;
+    border: none;
+    outline: none;
+    border-radius: 250px;
+    font-weight: 800;
+    padding: 10px 25px;
+    background-color: cornflowerblue;
+    color: #fff;
+    transition: all 10ms;
+}
+.clear-btn:hover,
+.clear-btn:focus{
+    background-color: dodgerblue;
+    cursor: pointer;
+}

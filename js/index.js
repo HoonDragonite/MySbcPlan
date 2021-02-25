@@ -17,6 +17,11 @@ $(document).ready(function(){
         setLocalStorageValues();
         moveToReserves();
     });
+
+    $("#clearBtn").click(function(){
+        store.clearAll();
+        window.location.reload();
+    });
 });
 
 $(window).load(function () {
